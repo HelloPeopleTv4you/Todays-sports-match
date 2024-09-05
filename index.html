@@ -3,57 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24/7 Sports TV: Live Cricket, Football & More</title>
+    <title>Live Sports Match Cards</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0e0e0e;
-            color: #fff;
             margin: 0;
             padding: 0;
+            background-color: #0e0e0e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
         }
         .header {
-            background-color: #1c1c1c;
-            padding: 10px;
             text-align: center;
+            margin-bottom: 20px;
         }
         .header h1 {
-            margin: 0;
             font-size: 24px;
+            color: #fff700;
         }
-        .event-container {
-            margin: 20px;
-        }
-        .event-card {
+        .match-card {
             background-color: #2b2b2b;
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
-        .event-card h2 {
-            margin: 0 0 10px;
+        .match-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/free-photo/soccer-stadium-with-lights-background_90220-1723.jpg?t=st=1725557746~exp=1725561346~hmac=c28ae5c5e53b699ee372fff418075f352e231cb931d76946272b90b4782de785&w=740') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            filter: blur(4px) brightness(0.4);
+        }
+        .match-card h2 {
+            text-align: center;
             font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
         }
-        .teams {
+        .team-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .team {
+            flex: 1;
             text-align: center;
         }
         .team img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
         }
-        .timer {
+        .vs {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff700;
+        }
+        .event-details {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+        .countdown {
             text-align: center;
             margin-top: 10px;
             font-size: 18px;
+            color: #00ff00;
         }
         .live-status {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 5px;
             color: limegreen;
         }
         .footer {
@@ -64,39 +98,65 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>24/7 Sports TV: Live Cricket, Football & More</h1>
-    </div>
 
-    <div class="event-container">
-        <!-- First Event -->
-        <div class="event-card">
-            <h2>Sri Lanka Tour of Bangladesh - 3rd ODI</h2>
-            <div class="teams">
+    <div class="container">
+        <div class="header">
+            <h1>Live Sports Match Schedule</h1>
+        </div>
+
+        <!-- Match 1 -->
+        <div class="match-card">
+            <h2>ICC Men's T20 World Cup - WI vs ENG</h2>
+            <div class="team-container">
                 <div class="team">
-                    <img src="flag-bangladesh.png" alt="BAN">
-                    <p>BAN</p>
+                    <img src="https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2" alt="West Indies Logo">
+                    <p>West Indies</p>
                 </div>
-                <div class="vs">vs</div>
+                <div class="vs">VS</div>
                 <div class="team">
-                    <img src="flag-sri-lanka.png" alt="SL">
-                    <p>SL</p>
+                    <img src="https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo=" alt="England Logo">
+                    <p>England</p>
                 </div>
             </div>
-            <div class="timer" id="countdown1"></div>
+            <div class="event-details">
+                <p>Match Date: March 18, 2024</p>
+                <p>Venue: West Indies</p>
+            </div>
+            <div class="countdown" id="countdown1"></div>
             <div class="live-status" id="live1"></div>
         </div>
 
-      
+        <!-- Match 2 -->
+        <div class="match-card">
+            <h2>Sri Lanka Tour of Bangladesh - 3rd ODI</h2>
+            <div class="team-container">
+                <div class="team">
+                    <img src="https://cdn.countryflags.com/thumbs/bangladesh/flag-800.png" alt="Bangladesh Logo">
+                    <p>Bangladesh</p>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team">
+                    <img src="https://cdn.countryflags.com/thumbs/sri-lanka/flag-800.png" alt="Sri Lanka Logo">
+                    <p>Sri Lanka</p>
+                </div>
+            </div>
+            <div class="event-details">
+                <p>Match Date: March 18, 2024</p>
+                <p>Venue: Bangladesh</p>
+            </div>
+            <div class="countdown" id="countdown2"></div>
+            <div class="live-status" id="live2"></div>
+        </div>
 
-    <div class="footer">
-        <p>Powered by Sports TV</p>
+        <div class="footer">
+            <p>Powered by Sports TV</p>
+        </div>
     </div>
 
     <script>
         // Set the dates for the events
-        const event1Date = new Date("March 18, 2024 11:00:00").getTime();
-        const event2Date = new Date("March 18, 2024 11:00:00").getTime();
+        const match1Date = new Date("March 18, 2024 11:00:00").getTime();
+        const match2Date = new Date("March 18, 2024 14:00:00").getTime();
 
         function updateCountdown(eventDate, countdownId, liveId) {
             const now = new Date().getTime();
@@ -118,8 +178,8 @@
 
         // Update countdowns every second
         setInterval(function () {
-            updateCountdown(event1Date, "countdown1", "live1");
-            updateCountdown(event2Date, "countdown2", "live2");
+            updateCountdown(match1Date, "countdown1", "live1");
+            updateCountdown(match2Date, "countdown2", "live2");
         }, 1000);
     </script>
 </body>
