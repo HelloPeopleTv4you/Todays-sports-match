@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Card Design</title>
+    <title>Match Card Design with Countdown</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,6 +59,7 @@
             width: 100px;
             height: 100px;
             margin-bottom: 10px;
+            border-radius: 10px;
         }
         .vs {
             font-size: 36px;
@@ -72,6 +73,11 @@
             font-size: 16px;
             color: #fff;
         }
+        .countdown-timer {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff4747;
+        }
     </style>
 </head>
 <body>
@@ -80,12 +86,12 @@
             <h2>ICC Men's T20 World Cup - WI vs ENG</h2>
             <div class="team-container">
                 <div class="team">
-                    <img src="wi-logo.png" alt="West Indies Logo">
+                    <img src="https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2" alt="West Indies Logo">
                     <p>West Indies</p>
                 </div>
                 <div class="vs">VS</div>
                 <div class="team">
-                    <img src="eng-logo.png" alt="England Logo">
+                    <img src="https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo=" alt="England Logo">
                     <p>England</p>
                 </div>
             </div>
@@ -93,7 +99,35 @@
                 <p>Match Date: March 18, 2024</p>
                 <p>Venue: West Indies</p>
             </div>
+            <div class="countdown-timer" id="countdown"></div>
         </div>
     </div>
+
+    <script>
+        // Set the match date
+        const matchDate = new Date("March 18, 2024 11:00:00").getTime();
+
+        // Countdown function to update the time
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = matchDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "LIVE NOW";
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the countdown element
+                document.getElementById("countdown").innerHTML =
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            }
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
