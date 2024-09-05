@@ -1,1 +1,126 @@
-Today's sports match
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 Sports TV: Live Cricket, Football & More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e0e0e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #1c1c1c;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .event-container {
+            margin: 20px;
+        }
+        .event-card {
+            background-color: #2b2b2b;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .event-card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .team {
+            text-align: center;
+        }
+        .team img {
+            width: 60px;
+            height: 60px;
+        }
+        .timer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .live-status {
+            text-align: center;
+            margin-top: 10px;
+            color: limegreen;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>24/7 Sports TV: Live Cricket, Football & More</h1>
+    </div>
+
+    <div class="event-container">
+        <!-- First Event -->
+        <div class="event-card">
+            <h2>Sri Lanka Tour of Bangladesh - 3rd ODI</h2>
+            <div class="teams">
+                <div class="team">
+                    <img src="flag-bangladesh.png" alt="BAN">
+                    <p>BAN</p>
+                </div>
+                <div class="vs">vs</div>
+                <div class="team">
+                    <img src="flag-sri-lanka.png" alt="SL">
+                    <p>SL</p>
+                </div>
+            </div>
+            <div class="timer" id="countdown1"></div>
+            <div class="live-status" id="live1"></div>
+        </div>
+
+      
+
+    <div class="footer">
+        <p>Powered by Sports TV</p>
+    </div>
+
+    <script>
+        // Set the dates for the events
+        const event1Date = new Date("March 18, 2024 11:00:00").getTime();
+        const event2Date = new Date("March 18, 2024 11:00:00").getTime();
+
+        function updateCountdown(eventDate, countdownId, liveId) {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById(countdownId).innerHTML = "";
+                document.getElementById(liveId).innerHTML = "LIVE NOW";
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(countdownId).innerHTML =
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            }
+        }
+
+        // Update countdowns every second
+        setInterval(function () {
+            updateCountdown(event1Date, "countdown1", "live1");
+            updateCountdown(event2Date, "countdown2", "live2");
+        }, 1000);
+    </script>
+</body>
+</html>
