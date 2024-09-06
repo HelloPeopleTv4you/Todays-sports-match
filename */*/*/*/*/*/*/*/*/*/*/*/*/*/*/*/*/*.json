@@ -10,39 +10,21 @@
     },
     "eventName": "ICC Men's T20 World Cup - WI vs ENG",
     "venue": "West Indies",
-    "matchDate": "March 18, 2024 12:00:00",
-    "embedurl": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8"
+    "matchDate": "March 18, 2024 11:00:00",
+    "hlsurl": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
+    "mpd": "https://live-hls-web-aje.getaj.net/AJE/index.mpd",
+    "embedurl": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8",
+    "k1": "your-key-id",
+    "k2": "your-key"
   },
   "ServerButton": [
     {
       "label": "HLS Stream",
-      "url": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8"
+      "embet": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8"
     },
     {
       "label": "MPD Stream",
-      "url": "https://live-hls-web-aje.getaj.net/AJE/index.mpd"
-    },
-    {
-      "label": "Embed Player",
-      "url": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8"
-    }
-  ],
-  "drm": {
-    "clearkey": {
-      "keyId": "your-key-id",
-      "key": "your-key"
-    }
-  },
-  "sources": [
-    {
-      "url": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
-      "type": "hls",
-      "label": "HLS"
-    },
-    {
-      "url": "https://live-hls-web-aje.getaj.net/AJE/index.mpd",
-      "type": "mpd",
-      "label": "MPD"
+      "embet": "https://your-mpd-stream-url"
     }
   ]
 }
