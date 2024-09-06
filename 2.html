@@ -5,7 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Match Countdown</title>
     <style>
-        /* Existing styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #fff700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .current-time {
+            margin: 0;
+        }
+        .match-card {
+            background: url('https://img.freepik.com/free-photo/soccer-stadium-with-lights-background_90220-1723.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .match-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .match-card h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .team {
+            flex: 1;
+            text-align: center;
+        }
+        .team img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .vs {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff700;
+        }
+        .event-details {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .countdown {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #00ff00;
+            position: relative;
+            z-index: 2;
+        }
+        .live-status {
+            text-align: center;
+            margin-top: 5px;
+            color: limegreen;
+            position: relative;
+            z-index: 2;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1c1c1c;
+            margin-top: 20px;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .telegram-btn {
+            display: block;
+            margin: 10px auto;
+            width: 150px;
+        }
+        .telegram-btn img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        #player {
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 2px solid #e50914;
+        }
         .server-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -19,6 +145,11 @@
         }
         .server-btn:hover {
             background-color: #d40812;
+        }
+        #embed-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
         }
         /* JW Player custom skin styles */
         .jw-skin-custom .jw-controls {
@@ -61,11 +192,6 @@
             content: '\f04c';
             font-family: 'FontAwesome';
         }
-        #embed-container iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
     </style>
     <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
 </head>
@@ -73,13 +199,10 @@
 
     <div class="header">
         <h1>Today's Sports Match</h1>
+        <p class="current-time" id="current-time"></p>
     </div>
 
     <div class="container">
-        <div class="current-time">
-            <p>Current Time: <span id="current-time"></span></p>
-        </div>
-
         <!-- Match Event -->
         <div class="match-card">
             <h2 id="event-name">Loading...</h2>
@@ -176,7 +299,7 @@
             function updateCurrentTime() {
                 const now = new Date();
                 const currentTime = now.toLocaleTimeString();
-                document.getElementById('current-time').textContent = currentTime;
+                document.getElementById('current-time').textContent = `Current Time: ${currentTime}`;
             }
             setInterval(updateCurrentTime, 1000);
 
@@ -185,7 +308,7 @@
             function updateCountdown() {
                 const now = new Date().getTime();
                 const distance = matchDate - now;
-                
+
                 if (distance < 0) {
                     document.getElementById("countdown").innerHTML = "";
                     document.getElementById("live-status").innerHTML = "LIVE NOW";
