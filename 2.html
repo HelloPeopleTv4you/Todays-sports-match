@@ -3,131 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Card Design with Countdown</title>
+    <title>Live Match Countdown</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #0e0e0e;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
-        .card-container {
-            position: relative;
-            width: 80%;
+        .container {
+            width: 90%;
             max-width: 700px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-        .card-container::before {
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #fff700;
+            text-transform: uppercase;
+        }
+        .current-time {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .match-card {
+            background: url('https://img.freepik.com/free-photo/soccer-stadium-with-lights-background_90220-1723.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .match-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://img.freepik.com/free-photo/soccer-stadium-with-lights-background_90220-1723.jpg?t=st=1725557746~exp=1725561346~hmac=c28ae5c5e53b699ee372fff418075f352e231cb931d76946272b90b4782de785&w=740') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-            filter: blur(4px) brightness(0.5);
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
         }
-        .card-content {
-            padding: 20px;
+        .match-card h2 {
             text-align: center;
-            color: white;
-        }
-        .card-content h2 {
-            margin: 0 0 20px;
-            font-size: 28px;
-            text-transform: uppercase;
-            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+            position: relative;
+            z-index: 2;
         }
         .team-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
         .team {
             flex: 1;
             text-align: center;
         }
         .team img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
         }
         .vs {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: bold;
             color: #fff700;
         }
         .event-details {
+            text-align: center;
             margin-top: 20px;
-        }
-        .event-details p {
-            font-size: 16px;
             color: #fff;
+            position: relative;
+            z-index: 2;
         }
-        .countdown-timer {
-            font-size: 24px;
+        .countdown {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #00ff00;
+            position: relative;
+            z-index: 2;
+        }
+        .live-status {
+            text-align: center;
+            margin-top: 5px;
+            color: limegreen;
+            position: relative;
+            z-index: 2;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1c1c1c;
             margin-top: 20px;
-            color: #ff4747;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .telegram-btn {
+            display: block;
+            margin: 10px auto;
+            width: 150px;
+        }
+        .telegram-btn img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .ads-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .ads-section img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+        }
+        #player {
+            margin-top: 20px;
         }
     </style>
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card-content">
-            <h2>ICC Men's T20 World Cup - WI vs ENG</h2>
+
+    <div class="header">
+        <h1>Today's Sports Match</h1>
+    </div>
+
+    <div class="container">
+        <div class="current-time">
+            <p>Current Time: <span id="current-time"></span></p>
+        </div>
+
+        <!-- Match Event -->
+        <div class="match-card">
+            <h2 id="event-name">Loading...</h2>
             <div class="team-container">
                 <div class="team">
-                    <img src="https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2" alt="West Indies Logo">
-                    <p>West Indies</p>
+                    <img id="team1-logo" src="" alt="Team 1 Logo">
+                    <p id="team1-name">Team 1</p>
                 </div>
                 <div class="vs">VS</div>
                 <div class="team">
-                    <img src="https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo=" alt="England Logo">
-                    <p>England</p>
+                    <img id="team2-logo" src="" alt="Team 2 Logo">
+                    <p id="team2-name">Team 2</p>
                 </div>
             </div>
             <div class="event-details">
-                <p>Match Date: March 18, 2024</p>
-                <p>Venue: West Indies</p>
+                <p id="match-date">Match Date: Loading...</p>
+                <p id="venue">Venue: Loading...</p>
             </div>
-            <div class="countdown-timer" id="countdown"></div>
+            <div class="countdown" id="countdown"></div>
+            <div class="live-status" id="live-status"></div>
+        </div>
+
+        <!-- JW Player -->
+        <div id="player"></div>
+
+        <!-- Ads Section -->
+        <div class="ads-section">
+            <img src="https://via.placeholder.com/300x250?text=Ad+Banner" alt="Ad Banner">
+        </div>
+
+        <!-- Telegram Button -->
+        <a href="https://t.me/joinchat/xxxxxxx" class="telegram-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Join Telegram">
+        </a>
+
+        <div class="footer">
+            <p>Powered by HelloPeopleTV4You</p>
         </div>
     </div>
 
     <script>
-        // Set the match date
-        const matchDate = new Date("March 18, 2024 11:00:00").getTime();
+        async function fetchMatchData() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/HelloPeopleTv4you/Todays-sports-match/main/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*.json');
+                const data = await response.json();
 
-        // Countdown function to update the time
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = matchDate - now;
+                const { match, serverButtons } = data;
+                const { team1, team2, eventName, venue, matchDate, hlsurl } = match;
 
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "LIVE NOW";
-            } else {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                // Populate HTML with match details
+                document.getElementById('team1-name').textContent = team1.name;
+                document.getElementById('team1-logo').src = team1.logo;
+                document.getElementById('team2-name').textContent = team2.name;
+                document.getElementById('team2-logo').src = team2.logo;
+                document.getElementById('event-name').textContent = eventName;
+                document.getElementById('match-date').textContent = `Match Date: ${new Date(matchDate).toLocaleString()}`;
+                document.getElementById('venue').textContent = `Venue: ${venue}`;
 
-                // Display the result in the countdown element
-                document.getElementById("countdown").innerHTML =
-                    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                // Current time display
+                function updateCurrentTime() {
+                    const now = new Date();
+                    const currentTime = now.toLocaleTimeString();
+                    document.getElementById('current-time').textContent = currentTime;
+                }
+                setInterval(updateCurrentTime, 1000);
+
+                // Countdown
+                const matchDateMs = new Date(matchDate).getTime();
+
+                function updateCountdown() {
+                    const now = new Date().getTime();
+                    const distance = matchDateMs - now;
+
+                    if (distance < 0) {
+                        document.getElementById("countdown").innerHTML = "";
+                        document.getElementById("live-status").innerHTML = "LIVE NOW";
+                    } else {
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                    }
+                }
+                setInterval(updateCountdown, 1000);
+
+                // JW Player setup
+                const bestStream = serverButtons[0].hlsurl; // Example, adjust as needed
+
+                jwplayer("player").setup({
+                    file: bestStream,
+                    width: "100%",
+                    height: "auto",
+                    aspectratio: "16:9",
+                    autostart: false,
+                    controls: true
+                });
+
+            } catch (error) {
+                console.error('Error fetching match data:', error);
             }
         }
 
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
+        fetchMatchData();
+
     </script>
 </body>
 </html>
