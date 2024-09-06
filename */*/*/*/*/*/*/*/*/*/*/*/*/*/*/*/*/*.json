@@ -1,0 +1,22 @@
+{
+  "match": {
+    "team1": {
+      "name": "West Indies",
+      "logo": "https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2"
+    },
+    "team2": {
+      "name": "England",
+      "logo": "https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo="
+    },
+    "eventName": "ICC Men's T20 World Cup - WI vs ENG",
+    "venue": "West Indies",
+    "matchDate": "March 18, 2024 11:00:00",
+    "hlsurl": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8"
+  }
+   "Server-button": {
+      "hlsurl": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
+      "embet": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8"
+     "hlsurl": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
+      "embet": "https://noobromon.github.io/m3u8-to-iframe/live/player1.html?url=https%3A%2F%2Fnmxlive.akamaized.net%2Fhls%2Flive%2F529965%2FLive_1%2Findex.m3u8"
+    },
+}
