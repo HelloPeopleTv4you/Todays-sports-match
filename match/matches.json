@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "matchTitle": "ICC Men's T20 World Cup - WI vs ENG",
+        "team1": {
+            "name": "West Indies",
+            "logo": "https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2"
+        },
+        "team2": {
+            "name": "England",
+            "logo": "https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo="
+        },
+        "date": "March 18, 2024 11:00:00",
+        "venue": "West Indies"
+    }
+]
