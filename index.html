@@ -191,7 +191,7 @@
         }
 
         // Fetch matches from the JSON file
-        fetch('matches.json')
+        fetch('match/matches.json')
             .then(response => response.json())
             .then(data => {
                 createMatchCards(data);
