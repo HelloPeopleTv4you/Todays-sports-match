@@ -13,35 +13,5 @@
         "date": "2024-09-20T15:00:00Z",
         "venue": "Chennai Stadium",
         "url": "https://hellopeopletv4you.github.io/Todays-sports-match/player/"
-    },
-    {
-        "id": 2,
-        "matchTitle": "Football Match 1",
-        "team1": {
-            "name": "Team C",
-            "logo": "https://example.com/team-c-logo.png"
-        },
-        "team2": {
-            "name": "Team D",
-            "logo": "https://example.com/team-d-logo.png"
-        },
-        "date": "2024-09-21T15:00:00Z",
-        "venue": "Stadium 2",
-        "url": "https://example.com/match-details/2"
-    },
-    {
-        "id": 3,
-        "matchTitle": "Basketball Match 1",
-        "team1": {
-            "name": "Team E",
-            "logo": "https://example.com/team-e-logo.png"
-        },
-        "team2": {
-            "name": "Team F",
-            "logo": "https://example.com/team-f-logo.png"
-        },
-        "date": "2024-09-22T15:00:00Z",
-        "venue": "Stadium 3",
-        "url": "https://example.com/match-details/3"
     }
 ]
