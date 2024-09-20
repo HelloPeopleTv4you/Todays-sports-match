@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Match Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #fff700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .current-time {
+            margin: 0;
+        }
+        .iframe-container {
+            margin-top: 20px;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .iframe-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #e50914;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .iframe-btn:hover {
+            background-color: #d40812;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1c1c1c;
+            margin-top: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Today's Sports Match</h1>
+        <p class="current-time" id="current-time"></p>
+    </div>
+
+    <div class="container">
+        <!-- Iframe Container -->
+        <div class="iframe-container">
+            <iframe id="match-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Iframe Source Buttons -->
+        <div id="iframe-buttons"></div>
+
+        <!-- Telegram Button -->
+        <a href="https://t.me/joinchat/xxxxxxx" class="telegram-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Join Telegram">
+        </a>
+
+        <div class="footer">
+            <p>Powered by HelloPeopleTV4You</p>
+        </div>
+    </div>
+
+    <script>
+        // Fetch JSON data
+        fetch('https://raw.githubusercontent.com/HelloPeopleTv4you/Todays-sports-match/main/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*.json')
+        .then(response => response.json())
+        .then(data => {
+            const iframeSources = data.IframeSources || [];
+
+            // Populate iframe source buttons
+            const iframeButtonsHTML = iframeSources.map(source => `
+                <button class="iframe-btn" onclick="changeIframeSource('${source.url}')">${source.label}</button>
+            `).join('');
+            document.getElementById('iframe-buttons').innerHTML = iframeButtonsHTML;
+
+            // Set initial iframe source if available
+            if (iframeSources.length > 0) {
+                document.getElementById('match-iframe').src = iframeSources[0].url;
+            }
+
+            // Current time display
+            function updateCurrentTime() {
+                const now = new Date();
+                const currentTime = now.toLocaleTimeString();
+                document.getElementById('current-time').textContent = `Current Time: ${currentTime}`;
+            }
+            setInterval(updateCurrentTime, 1000);
+        })
+        .catch(error => console.error('Error loading match data:', error));
+
+        // Function to change the iframe source
+        function changeIframeSource(url) {
+            document.getElementById('match-iframe').src = url;
+        }
+    </script>
+</body>
+</html>
