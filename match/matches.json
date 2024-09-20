@@ -12,7 +12,8 @@
         },
         "date": "Today",
         "venue": "Chennai Stadium",
-        "url": "https://hellopeopletv4you.github.io/Todays-sports-match/player/"
+        "url": "https://hellopeopletv4you.github.io/Todays-sports-match/player/",
+        "live": true
     },
     {
         "id": 2,
@@ -27,7 +28,8 @@
         },
         "date": "Upcoming Date",
         "venue": "Upcoming Venue",
-        "url": "https://example.com/match2"
+        "url": "https://example.com/match2",
+        "live": false
     },
     {
         "id": 3,
@@ -42,6 +44,7 @@
         },
         "date": "Upcoming Date",
         "venue": "Upcoming Venue",
-        "url": "https://example.com/match3"
+        "url": "https://example.com/match3",
+        "live": false
     }
 ]
