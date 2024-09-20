@@ -61,7 +61,7 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
-            border: solid 3px #fff700; /* Added solid 3px border */
+            border: solid 3px #fff700;
         }
 
         .match-card::before {
@@ -131,6 +131,11 @@
             padding: 10px;
             background-color: #1c1c1c;
         }
+
+        a {
+            text-decoration: none;
+            color: inherit; /* Inherit color for the link */
+        }
     </style>
 </head>
 
@@ -141,7 +146,7 @@
             <h1>Live Sports Match Schedule</h1>
         </div>
         <div id="current-time" class="current-time"></div>
-       <a href="/player" <div id="match-cards"></div> </a>
+        <div id="match-cards"></div>
         <div class="footer">
             <p>Powered by Sports TV</p>
         </div>
@@ -182,7 +187,13 @@
                 const matchCard = document.createElement('div');
                 matchCard.className = 'match-card';
 
-                matchCard.innerHTML = `
+                // Create a link element
+                const matchLink = document.createElement('a');
+                matchLink.href = match.url; // Use the URL from the JSON data
+                matchLink.target = "_blank"; // Optional: open in a new tab
+
+                // Set the inner HTML for the match card
+                matchLink.innerHTML = `
                     <h2>${match.matchTitle}</h2>
                     <div class="team-container">
                         <div class="team">
@@ -203,6 +214,8 @@
                     <div class="live-status" id="live${match.id}"></div>
                 `;
 
+                // Append the match card to the link, and then to the container
+                matchCard.appendChild(matchLink);
                 container.appendChild(matchCard);
 
                 const eventDate = new Date(match.date).getTime();
