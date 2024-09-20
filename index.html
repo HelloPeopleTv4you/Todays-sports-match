@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="title" content="Hello People TV - Live Sports Streaming">
-<meta name="description" content="Catch all the live sports action on Hello People TV! Enjoy cricket, football, and more with today’s live matches. Join us for non-stop entertainment!">
-<meta name="keywords" content="Hello People TV, live sports, cricket, football, streaming, live TV, today’s matches, sports entertainment, live cricket, live football">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Hello People TV Team">
-<meta property="og:title" content="Hello People TV - Your Sports Destination">
-<meta property="og:description" content="Stream live cricket and football matches on Hello People TV. Stay updated with today's sports events!">
-<meta property="og:image" content="https://i.postimg.cc/SQzZrWpf/New-Project-3.png">
-<meta property="og:url" content="https://hellopeopletv.blogspot.com/">
-<meta name="twitter:title" content="Hello People TV - Live Sports Streaming">
-<meta name="twitter:description" content="Watch cricket, football, and other live sports today on Hello People TV!">
-<meta name="twitter:image" content="https://i.ibb.co.com/bWPk5JK/hellopeopletv-7.png">
-<link rel="icon" href="/p/hellopeopletv-logo.png" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Hello People TV - Live Sports Streaming">
+    <meta name="description" content="Catch all the live sports action on Hello People TV! Enjoy cricket, football, and more with today’s live matches. Join us for non-stop entertainment!">
+    <meta name="keywords" content="Hello People TV, live sports, cricket, football, streaming, live TV, today’s matches, sports entertainment, live cricket, live football">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hello People TV Team">
+    <meta property="og:title" content="Hello People TV - Your Sports Destination">
+    <meta property="og:description" content="Stream live cricket and football matches on Hello People TV. Stay updated with today's sports events!">
+    <meta property="og:image" content="https://i.postimg.cc/SQzZrWpf/New-Project-3.png">
+    <meta property="og:url" content="https://hellopeopletv.blogspot.com/">
+    <meta name="twitter:title" content="Hello People TV - Live Sports Streaming">
+    <meta name="twitter:description" content="Watch cricket, football, and other live sports today on Hello People TV!">
+    <meta name="twitter:image" content="https://i.ibb.co.com/bWPk5JK/hellopeopletv-7.png">
+    <link rel="icon" href="/p/hellopeopletv-logo.png" type="image/x-icon">
     <title>Live Sports Match Cards</title>
     <style>
         body {
@@ -30,19 +30,30 @@
             align-items: center;
             min-height: 100vh;
         }
+
         .container {
             width: 90%;
             max-width: 900px;
             margin: 20px auto;
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .header h1 {
             font-size: 24px;
             color: #fff700;
         }
+
+        .current-time {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
         .match-card {
             background-color: #2b2b2b;
             border-radius: 10px;
@@ -50,7 +61,9 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
+            border: solid 3px #fff700; /* Added solid 3px border */
         }
+
         .match-card::before {
             content: '';
             position: absolute;
@@ -63,47 +76,56 @@
             z-index: -1;
             filter: blur(4px) brightness(0.4);
         }
+
         .match-card h2 {
             text-align: center;
             font-size: 20px;
             margin-bottom: 10px;
             color: #fff;
         }
+
         .team-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .team {
             flex: 1;
             text-align: center;
         }
+
         .team img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
         }
+
         .vs {
             font-size: 24px;
             font-weight: bold;
             color: #fff700;
         }
+
         .event-details {
             text-align: center;
             margin-top: 20px;
             color: #fff;
         }
+
         .countdown {
             text-align: center;
             margin-top: 10px;
             font-size: 18px;
             color: #00ff00;
         }
+
         .live-status {
             text-align: center;
             margin-top: 5px;
             color: limegreen;
         }
+
         .footer {
             text-align: center;
             padding: 10px;
@@ -111,45 +133,29 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <div class="header">
             <h1>Live Sports Match Schedule</h1>
         </div>
-
-        <!-- Match 1 -->
-        <div class="match-card">
-            <h2>ICC Men's T20 World Cup - WI vs ENG</h2>
-            <div class="team-container">
-                <div class="team">
-                    <img src="https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2" alt="West Indies Logo">
-                    <p>West Indies</p>
-                </div>
-                <div class="vs">VS</div>
-                <div class="team">
-                    <img src="https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo=" alt="England Logo">
-                    <p>England</p>
-                </div>
-            </div>
-            <div class="event-details">
-                <p>Match Date: March 18, 2024</p>
-                <p>Venue: West Indies</p>
-            </div>
-            <div class="countdown" id="countdown1"></div>
-            <div class="live-status" id="live1"></div>
-        </div>
-
+        <div id="current-time" class="current-time"></div>
+        <div id="match-cards"></div>
         <div class="footer">
             <p>Powered by Sports TV</p>
         </div>
     </div>
 
     <script>
-        // Set the dates for the events
-        const match1Date = new Date("March 18, 2024 11:00:00").getTime();
-        const match2Date = new Date("March 18, 2024 14:00:00").getTime();
+        // Function to update the current time
+        function updateCurrentTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('current-time').innerHTML = `Current Time: ${formattedTime}`;
+        }
 
+        // Function to update countdown and live status
         function updateCountdown(eventDate, countdownId, liveId) {
             const now = new Date().getTime();
             const distance = eventDate - now;
@@ -168,11 +174,59 @@
             }
         }
 
-        // Update countdowns every second
-        setInterval(function () {
-            updateCountdown(match1Date, "countdown1", "live1");
-            updateCountdown(match2Date, "countdown2", "live2");
-        }, 1000);
+        // Function to create match cards dynamically from JSON data
+        function createMatchCards(matches) {
+            const container = document.getElementById('match-cards');
+
+            matches.forEach(match => {
+                const matchCard = document.createElement('div');
+                matchCard.className = 'match-card';
+
+                matchCard.innerHTML = `
+                    <h2>${match.matchTitle}</h2>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="${match.team1.logo}" alt="${match.team1.name} Logo">
+                            <p>${match.team1.name}</p>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="${match.team2.logo}" alt="${match.team2.name} Logo">
+                            <p>${match.team2.name}</p>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <p>Match Date: ${new Date(match.date).toLocaleDateString()}</p>
+                        <p>Venue: ${match.venue}</p>
+                    </div>
+                    <div class="countdown" id="countdown${match.id}"></div>
+                    <div class="live-status" id="live${match.id}"></div>
+                `;
+
+                container.appendChild(matchCard);
+
+                const eventDate = new Date(match.date).getTime();
+                setInterval(function () {
+                    updateCountdown(eventDate, `countdown${match.id}`, `live${match.id}`);
+                }, 1000);
+            });
+        }
+
+        // Fetch match data from the JSON file
+        function fetchMatchData() {
+            fetch('/match/matches.json')
+                .then(response => response.json())
+                .then(data => createMatchCards(data))
+                .catch(error => console.error('Error fetching match data:', error));
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchMatchData();
+            setInterval(updateCurrentTime, 1000); // Update the current time every second
+        });
     </script>
+
 </body>
+
 </html>
