@@ -1,44 +1,47 @@
 [
     {
         "id": 1,
-        "matchTitle": "ICC Men's T20 World Cup - WI vs ENG",
+        "matchTitle": "Test Series Ban vs Ind",
         "team1": {
-            "name": "West Indies",
-            "logo": "https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/4234/5628/West_Indies_cricket__07559.1648143751.jpg?c=2"
+            "name": "Bangladesh",
+            "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJLKt7BWRIjFtCTU9BebFOvk0G0tSXb09pA&s"
         },
         "team2": {
-            "name": "England",
-            "logo": "https://media.istockphoto.com/id/880562092/vector/great-britain-united-kingdom-flag.jpg?s=612x612&w=0&k=20&c=z6Qg_O-2pIcreAK3Fb8X003h2HRIFiRWNT8cg7hDfFo="
+            "name": "India",
+            "logo": "https://t3.ftcdn.net/jpg/06/12/34/84/360_F_612348476_k3i3brMUOo3N9Wk3yoceMHqZ8w4jpFqu.jpg"
         },
-        "date": "March 18, 2024 11:00:00",
-        "venue": "West Indies"
+        "date": "2024-09-20T15:00:00Z",
+        "venue": "Chennai Stadium",
+        "url": "https://hellopeopletv4you.github.io/Todays-sports-match/player/"
     },
     {
         "id": 2,
-        "matchTitle": "La Liga - FC Barcelona vs Real Madrid",
+        "matchTitle": "Football Match 1",
         "team1": {
-            "name": "FC Barcelona",
-            "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
+            "name": "Team C",
+            "logo": "https://example.com/team-c-logo.png"
         },
         "team2": {
-            "name": "Real Madrid",
-            "logo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
+            "name": "Team D",
+            "logo": "https://example.com/team-d-logo.png"
         },
-        "date": "March 18, 2024 14:00:00",
-        "venue": "Camp Nou, Barcelona"
+        "date": "2024-09-21T15:00:00Z",
+        "venue": "Stadium 2",
+        "url": "https://example.com/match-details/2"
     },
     {
         "id": 3,
-        "matchTitle": "UEFA Champions League - PSG vs Manchester United",
+        "matchTitle": "Basketball Match 1",
         "team1": {
-            "name": "Paris Saint-Germain",
-            "logo": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
+            "name": "Team E",
+            "logo": "https://example.com/team-e-logo.png"
         },
         "team2": {
-            "name": "Manchester United",
-            "logo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
+            "name": "Team F",
+            "logo": "https://example.com/team-f-logo.png"
         },
-        "date": "March 19, 2024 20:00:00",
-        "venue": "Parc des Princes, Paris"
+        "date": "2024-09-22T15:00:00Z",
+        "venue": "Stadium 3",
+        "url": "https://example.com/match-details/3"
     }
 ]
