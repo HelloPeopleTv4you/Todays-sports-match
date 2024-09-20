@@ -62,6 +62,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
             border: solid 3px #fff700;
+            cursor: pointer; /* Indicate clickable */
         }
 
         .match-card h2 {
@@ -98,13 +99,6 @@
             text-align: center;
             margin-top: 20px;
             color: #fff;
-        }
-
-        .countdown {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 18px;
-            color: #00ff00;
         }
 
         .live-status {
@@ -174,7 +168,6 @@
                     <div class="event-details">
                         <div>Date: ${match.date}</div>
                         <div>Venue: ${match.venue}</div>
-                        <div><a href="${match.url}" target="_blank">Watch Live</a></div>
                     </div>
                 `;
 
@@ -185,6 +178,11 @@
                     liveStatus.innerText = "LIVE NOW";
                     matchCard.appendChild(liveStatus);
                 }
+
+                // Redirect to match URL on click
+                matchCard.onclick = () => {
+                    window.location.href = match.url;
+                };
 
                 matchCardsContainer.appendChild(matchCard);
             });
