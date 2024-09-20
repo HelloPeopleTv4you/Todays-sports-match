@@ -214,7 +214,7 @@
 
         // Fetch match data from the JSON file
         function fetchMatchData() {
-            fetch('/match/matches.json')
+            fetch('match/matches.json')
                 .then(response => response.json())
                 .then(data => createMatchCards(data))
                 .catch(error => console.error('Error fetching match data:', error));
