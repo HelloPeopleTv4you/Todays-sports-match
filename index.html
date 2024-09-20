@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://hellopeopletv.blogspot.com/">
     <meta name="twitter:title" content="Hello People TV - Live Sports Streaming">
     <meta name="twitter:description" content="Watch cricket, football, and other live sports today on Hello People TV!">
-    <meta name="twitter:image" content="https://i.ibb.co.com/bWPk5JK/hellopeopletv-7.png">
+    <meta name="twitter:image" content="https://i.ibb.co/com/bWPk5JK/hellopeopletv-7.png">
     <link rel="icon" href="/p/hellopeopletv-logo.png" type="image/x-icon">
     <title>Live Sports Match Cards</title>
     <style>
@@ -62,19 +62,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
             border: solid 3px #fff700;
-        }
-
-        .match-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://img.freepik.com/free-photo/soccer-stadium-with-lights-background_90220-1723.jpg?t=st=1725557746~exp=1725561346~hmac=c28ae5c5e53b699ee372fff418075f352e231cb931d76946272b90b4782de785&w=740') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-            filter: blur(4px) brightness(0.4);
         }
 
         .match-card h2 {
@@ -124,6 +111,8 @@
             text-align: center;
             margin-top: 5px;
             color: limegreen;
+            font-weight: bold;
+            font-size: 20px;
         }
 
         .footer {
@@ -134,7 +123,7 @@
 
         a {
             text-decoration: none;
-            color: inherit; /* Inherit color for the link */
+            color: inherit;
         }
     </style>
 </head>
@@ -160,86 +149,58 @@
             document.getElementById('current-time').innerHTML = `Current Time: ${formattedTime}`;
         }
 
-        // Function to update countdown and live status
-        function updateCountdown(eventDate, countdownId, liveId) {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
-
-            if (distance < 0) {
-                document.getElementById(countdownId).innerHTML = "";
-                document.getElementById(liveId).innerHTML = "LIVE NOW";
-            } else {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById(countdownId).innerHTML =
-                    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-            }
-        }
-
         // Function to create match cards dynamically from JSON data
         function createMatchCards(matches) {
-            const container = document.getElementById('match-cards');
+            const matchCardsContainer = document.getElementById('match-cards');
+            matchCardsContainer.innerHTML = ''; // Clear existing content
 
             matches.forEach(match => {
                 const matchCard = document.createElement('div');
                 matchCard.className = 'match-card';
 
-                // Create a link element
-                const matchLink = document.createElement('a');
-                matchLink.href = match.url; // Use the URL from the JSON data
-                matchLink.target = "_blank"; // Optional: open in a new tab
-
-                // Set the inner HTML for the match card
-                matchLink.innerHTML = `
+                matchCard.innerHTML = `
                     <h2>${match.matchTitle}</h2>
                     <div class="team-container">
                         <div class="team">
                             <img src="${match.team1.logo}" alt="${match.team1.name} Logo">
-                            <p>${match.team1.name}</p>
+                            <div>${match.team1.name}</div>
                         </div>
-                        <div class="vs">VS</div>
+                        <div class="vs">vs</div>
                         <div class="team">
                             <img src="${match.team2.logo}" alt="${match.team2.name} Logo">
-                            <p>${match.team2.name}</p>
+                            <div>${match.team2.name}</div>
                         </div>
                     </div>
                     <div class="event-details">
-                        <p>Match Date: ${new Date(match.date).toLocaleDateString()}</p>
-                        <p>Venue: ${match.venue}</p>
+                        <div>Date: ${match.date}</div>
+                        <div>Venue: ${match.venue}</div>
+                        <div><a href="${match.url}" target="_blank">Watch Live</a></div>
                     </div>
-                    <div class="countdown" id="countdown${match.id}"></div>
-                    <div class="live-status" id="live${match.id}"></div>
                 `;
 
-                // Append the match card to the link, and then to the container
-                matchCard.appendChild(matchLink);
-                container.appendChild(matchCard);
+                // Show live status if applicable
+                if (match.live) {
+                    const liveStatus = document.createElement('div');
+                    liveStatus.className = 'live-status';
+                    liveStatus.innerText = "LIVE NOW";
+                    matchCard.appendChild(liveStatus);
+                }
 
-                const eventDate = new Date(match.date).getTime();
-                setInterval(function () {
-                    updateCountdown(eventDate, `countdown${match.id}`, `live${match.id}`);
-                }, 1000);
+                matchCardsContainer.appendChild(matchCard);
             });
         }
 
-        // Fetch match data from the JSON file
-        function fetchMatchData() {
-            fetch('match/matches.json')
-                .then(response => response.json())
-                .then(data => createMatchCards(data))
-                .catch(error => console.error('Error fetching match data:', error));
-        }
+        // Fetch matches from the JSON file
+        fetch('matches.json')
+            .then(response => response.json())
+            .then(data => {
+                createMatchCards(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
 
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function () {
-            fetchMatchData();
-            setInterval(updateCurrentTime, 1000); // Update the current time every second
-        });
+        // Update the current time every second
+        setInterval(updateCurrentTime, 1000);
     </script>
-
 </body>
 
 </html>
