@@ -12,5 +12,33 @@
         },
         "date": "March 18, 2024 11:00:00",
         "venue": "West Indies"
+    },
+    {
+        "id": 2,
+        "matchTitle": "La Liga - FC Barcelona vs Real Madrid",
+        "team1": {
+            "name": "FC Barcelona",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
+        },
+        "team2": {
+            "name": "Real Madrid",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
+        },
+        "date": "March 18, 2024 14:00:00",
+        "venue": "Camp Nou, Barcelona"
+    },
+    {
+        "id": 3,
+        "matchTitle": "UEFA Champions League - PSG vs Manchester United",
+        "team1": {
+            "name": "Paris Saint-Germain",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
+        },
+        "team2": {
+            "name": "Manchester United",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
+        },
+        "date": "March 19, 2024 20:00:00",
+        "venue": "Parc des Princes, Paris"
     }
 ]
