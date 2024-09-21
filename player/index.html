@@ -40,18 +40,22 @@
             margin: 0;
         }
         .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             margin-top: 20px;
             border: 3px solid #e50914;
             border-radius: 10px;
-            padding: 5px;
-            overflow: hidden; /* Ensures no scrolling inside the iframe */
+            overflow: hidden;
         }
         .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 50vh; /* Responsive height, adjusts based on viewport */
+            height: 100%;
             border: none;
             border-radius: 5px;
-            overflow: hidden;
         }
         .iframe-btn {
             display: inline-block;
@@ -84,6 +88,41 @@
             width: 100%;
             border-radius: 5px;
         }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px; /* Smaller title on smaller screens */
+            }
+
+            .header p {
+                font-size: 16px; /* Adjusted font size */
+            }
+
+            .iframe-btn {
+                padding: 8px 16px; /* Smaller buttons */
+                font-size: 14px; /* Smaller text */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px; /* Even smaller title */
+            }
+
+            .header p {
+                font-size: 14px; /* Further adjusted font size */
+            }
+
+            .iframe-btn {
+                padding: 6px 12px; /* Even smaller buttons */
+                font-size: 12px; /* Even smaller text */
+            }
+
+            .footer {
+                font-size: 14px; /* Adjust footer text */
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,7 +135,7 @@
     <div class="container">
         <!-- Iframe Container -->
         <div class="iframe-container">
-            <iframe id="match-iframe" src="https://hellopeopletv4you.github.io/Todays-sports-match/s/1/?id=1" frameborder="0" allowfullscreen scrolling="no"></iframe>
+            <iframe id="match-iframe" src="https://hellopeopletv4you.github.io/Todays-sports-match/s/1/?id=1" allowfullscreen></iframe>
         </div>
 
         <!-- Iframe Source Links -->
@@ -107,7 +146,6 @@
             <button class="iframe-btn" onclick="changeIframeSource('https://altogether-playlist.vercel.app/Tsports.html')">Source 4</button>
             <button class="iframe-btn" onclick="changeIframeSource(',s/1/?id=TNT_1_GB')">Source 5</button>
             <button class="iframe-btn" onclick="changeIframeSource('https://example.com/source3')">Source 6</button>
-            
         </div>
 
         <!-- Telegram Button -->
