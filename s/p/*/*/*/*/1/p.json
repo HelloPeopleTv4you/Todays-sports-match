@@ -1,4 +1,10 @@
-{
-    "id": "toffe-sports",
-    "source": "https://bdiptv24.com/Toffeelive/live.php?id=9b35bbb302b9&e=.m3u8",
-}
+[
+    {
+        "id": "toffe-sports",
+        "source": "https://bdiptv24.com/Toffeelive/live.php?id=9b35bbb302b9&e=.m3u8"
+    },
+    {
+        "id": "another-sport",
+        "source": "https://example.com/another-source.m3u8"
+    }
+]
