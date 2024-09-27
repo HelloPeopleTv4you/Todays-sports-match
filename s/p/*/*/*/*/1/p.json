@@ -1,0 +1,6 @@
+{
+    "id": "toffe-sports",
+    "source": "https://bdiptv24.com/Toffeelive/live.php?id=9b35bbb302b9&e=.m3u8",
+    "thumbnail": "https://example.com/thumbnail.jpg",  // Link to thumbnail image
+    "tags": ["live", "streaming", "video"]
+}
