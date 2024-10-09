@@ -47,6 +47,6 @@
         "date": "Sep 27–Oct 1, 10:00 AM",
         "venue": "Upcoming Venue",
         "url": "https://example.com/match3",
-        "live": false
+        "live": "true"
     }
 ]
