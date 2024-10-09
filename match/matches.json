@@ -13,7 +13,7 @@
         "date": "Today",
         "venue": "Chennai Stadium",
         "url": "https://hellopeopletv4you.github.io/Todays-sports-match/player/",
-        "live": true
+        "live": "true"
     },
     {
         "id": 2,
@@ -21,15 +21,17 @@
         "team1": {
             "name": "Bangladesh",
             "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJLKt7BWRIjFtCTU9BebFOvk0G0tSXb09pA&s"
+             "live": "true"
         },
         "team2": {
             "name": "India",
             "logo": "https://t3.ftcdn.net/jpg/06/12/34/84/360_F_612348476_k3i3brMUOo3N9Wk3yoceMHqZ8w4jpFqu.jpg"
+             "live": "true"
         },
         "date": "Upcoming Date",
         "venue": "Upcoming Venue",
         "url": "https://example.com/match2",
-        "live": false
+         "live": "true"
     },
     {
         "id": 3,
