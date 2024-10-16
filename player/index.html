@@ -4,133 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Match</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0e0e0e;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        .container {
-            width: 95%;
-            max-width: 700px;
-            padding: 10px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-size: 28px;
-            color: #fff700;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .header p {
-            font-size: 18px;
-            margin: 0;
-        }
-        .current-time {
-            margin: 0;
-        }
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            margin-top: 20px;
-            border: 1px solid #00aaff;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 5px;
-        }
-        .iframe-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 8px;
-            background-color: #e50914;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            border: 2px solid red;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .iframe-btn:hover {
-            background-color: #d40812;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1c1c1c;
-            margin-top: 20px;
-            color: #fff;
-        }
-        .telegram-btn {
-            display: block;
-            margin: 10px auto;
-            width: 40px; /* Smaller size for responsiveness */
-        }
-        .telegram-btn img {
-            width: 100%;
-            border-radius: 5px;
-        }
+   <script>
+<!-- code by https://www.html-code-generator.com -->
+document.write(unescape('%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20Arial%2C%20sans-serif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%230e0e0e%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20min-height%3A%20100vh%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%2095%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%20700px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.header%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.header%20h1%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2028px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff700%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-transform%3A%20uppercase%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%205px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.header%20p%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.current-time%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.iframe-container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding-top%3A%2056.25%25%3B%20/*%2016%3A9%20Aspect%20Ratio%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%201px%20solid%20%2300aaff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.iframe-container%20iframe%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%205px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.iframe-btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20inline-block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2010px%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%208px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23e50914%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%205px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%202px%20solid%20red%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.iframe-btn%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23d40812%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.footer%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%231c1c1c%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.telegram-btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%2010px%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%2040px%3B%20/*%20Smaller%20size%20for%20responsiveness%20*/%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20.telegram-btn%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%205px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20/*%20Media%20Queries%20*/%0A%20%20%20%20%20%20%20%20@media%20%28max-width%3A%20768px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20.header%20h1%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2024px%3B%20/*%20Smaller%20title%20on%20smaller%20screens%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20.header%20p%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2016px%3B%20/*%20Adjusted%20font%20size%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20.iframe-btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%208px%2016px%3B%20/*%20Smaller%20buttons%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2014px%3B%20/*%20Smaller%20text%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20@media%20%28max-width%3A%20480px%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20.header%20h1%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2020px%3B%20/*%20Even%20smaller%20title%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20.header%20p%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2014px%3B%20/*%20Further%20adjusted%20font%20size%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20.iframe-btn%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%206px%2012px%3B%20/*%20Even%20smaller%20buttons%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2012px%3B%20/*%20Even%20smaller%20text%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20.footer%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2014px%3B%20/*%20Adjust%20footer%20text%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20logo-foter%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%2060%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20height%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/style%3E'));
+</script>
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 24px; /* Smaller title on smaller screens */
-            }
-
-            .header p {
-                font-size: 16px; /* Adjusted font size */
-            }
-
-            .iframe-btn {
-                padding: 8px 16px; /* Smaller buttons */
-                font-size: 14px; /* Smaller text */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 20px; /* Even smaller title */
-            }
-
-            .header p {
-                font-size: 14px; /* Further adjusted font size */
-            }
-
-            .iframe-btn {
-                padding: 6px 12px; /* Even smaller buttons */
-                font-size: 12px; /* Even smaller text */
-            }
-
-            .footer {
-                font-size: 14px; /* Adjust footer text */
-            }
-            logo-foter img {
-            width: 60%;
-            height: 10px;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -175,18 +53,7 @@
     </div>
 
     <script>
-        // Function to change the iframe source
-        function changeIframeSource(url) {
-            document.getElementById('match-iframe').src = url;
-        }
-
-        // Current time display
-        function updateCurrentTime() {
-            const now = new Date();
-            const currentTime = now.toLocaleTimeString();
-            document.getElementById('current-time').textContent = `Current Time: ${currentTime}`;
-        }
-        setInterval(updateCurrentTime, 1000);
+    (function(_0x1ee4c3,_0x34e315){const _0x250f98=_0x18cd,_0x8127a8=_0x1ee4c3();while(!![]){try{const _0x57aef1=-parseInt(_0x250f98(0xfa))/0x1+parseInt(_0x250f98(0xff))/0x2*(-parseInt(_0x250f98(0xfd))/0x3)+parseInt(_0x250f98(0xfe))/0x4+-parseInt(_0x250f98(0xfc))/0x5+-parseInt(_0x250f98(0xf6))/0x6+parseInt(_0x250f98(0xf4))/0x7+parseInt(_0x250f98(0xf9))/0x8;if(_0x57aef1===_0x34e315)break;else _0x8127a8['push'](_0x8127a8['shift']());}catch(_0x28fa3a){_0x8127a8['push'](_0x8127a8['shift']());}}}(_0x5b21,0x9a8c5));function _0x5b21(){const _0xca5a5d=['1337614kJQmWx','5770079bPJjmI','match-iframe','980766tZnplI','textContent','getElementById','8634016IevQJz','865399JYrRlD','current-time','3895270AkNFYN','3PmnLpR','4824804jUxicv'];_0x5b21=function(){return _0xca5a5d;};return _0x5b21();}function changeIframeSource(_0x17417a){const _0x1ff9b2=_0x18cd;document[_0x1ff9b2(0xf8)](_0x1ff9b2(0xf5))['src']=_0x17417a;}function _0x18cd(_0x2c1c98,_0x23c073){const _0x5b2152=_0x5b21();return _0x18cd=function(_0x18cdb5,_0x3c91fb){_0x18cdb5=_0x18cdb5-0xf4;let _0x1e32d8=_0x5b2152[_0x18cdb5];return _0x1e32d8;},_0x18cd(_0x2c1c98,_0x23c073);}function updateCurrentTime(){const _0x41a9e8=_0x18cd,_0x4a16c8=new Date(),_0x195026=_0x4a16c8['toLocaleTimeString']();document['getElementById'](_0x41a9e8(0xfb))[_0x41a9e8(0xf7)]='Current\x20Time:\x20'+_0x195026;}setInterval(updateCurrentTime,0x3e8);
     </script>
          <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
 </body>
