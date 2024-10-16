@@ -20,128 +20,150 @@
     <title>Live Sports Match Cards</title>
 
 <style>
-        body {
-            margin-top: 50px;
-            margin-left: 30px;
-            margin-right: 30px;
-            padding: 0px;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: rgb(36, 36, 36);
-            color: white;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 20px auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            color: #fff700;
-        }
-
-        .current-time {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #00ff00;
-        }
-
-        .match-card {
-            background-color: #00102c;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            border: solid 3px #003eab;
-            cursor: pointer; /* Indicate clickable */
-        }
-
-        .match-card h2 {
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .team-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .team {
-            flex: 1;
-            text-align: center;
-        }
-
-        .team img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-        }
-
-        .vs {
-            font-size: 34px;
-            font-weight: bold;
-            color: #00dcff;
-        }
-
-        .event-details {
-            text-align: center;
-            margin-top: 20px;
-            color: #fff;
-            display: none;
-        }
-
-        .live-status {
-            text-align: center;
-            margin-top: 5px;
-            color: #def900;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1c1c1c;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    @media (max-width: 480px) {
-    .match-card{
-        height: 150px;
-    }
-
-    .team img{
-        width: 60px;
-        height: 60px;
-        border-radius: 80px;
-    }
-
-    .team img{
-        width: 60px;
-        height: 60px;
-        border-radius: 80px;
-    }
-
-    .vs{
-        width: 40px;
-        margin-bottom: 5px;
-    }
-
+       body {
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(36, 36, 36);
+    color: white;
 }
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #fff700;
+}
+
+.current-time {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+
+.match-card {
+    background-color: #00102c;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: solid 3px #003eab;
+    cursor: pointer; /* Indicate clickable */
+}
+
+.match-card h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team {
+    flex: 1;
+    text-align: center;
+}
+
+.team img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.vs {
+    font-size: 34px;
+    font-weight: bold;
+    color: #00dcff;
+}
+
+.event-details {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    display: none;
+}
+
+.live-status {
+    text-align: center;
+    margin-top: 5px;
+    color: #def900;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1c1c1c;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 20px; /* Reduce header size for tablets */
+    }
+
+    .current-time {
+        font-size: 16px; /* Slightly smaller time display */
+    }
+
+    .match-card {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .match-card h2 {
+        font-size: 18px; /* Smaller match card title */
+    }
+
+    .live-status {
+        font-size: 18px; /* Reduce live status size */
+    }
+}
+
+@media (max-width: 480px) {
+    .match-card {
+        height: auto; /* Allow for auto height instead of fixed */
+    }
+
+    .team img {
+        width: 50px; /* Further reduce image size */
+        height: 50px; /* Further reduce image size */
+    }
+
+    .vs {
+        font-size: 24px; /* Smaller vs text */
+        margin-bottom: 3px; /* Less margin */
+    }
+
+    .event-details {
+        font-size: 14px; /* Smaller event details font size */
+        display: block; /* Ensure event details display on smaller screens */
+    }
+}
+
     </style>
 </head>
 
